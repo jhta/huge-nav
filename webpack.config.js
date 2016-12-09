@@ -17,8 +17,12 @@ module.exports = {
       {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
+      },
+      // Font Definitions
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'
       }
-     ]
+    ]
    },
    stylus: {
     use: [rupture()],
