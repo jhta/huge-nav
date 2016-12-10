@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const rupture = require('rupture');
+const nib = require('nib');
 
 module.exports = {
   entry: {
@@ -12,6 +13,7 @@ module.exports = {
     path: './server/public/',
     filename: '[name].js',
   },
+  devtool: "source-map"
   module: {
     loaders: [
       {
@@ -25,7 +27,11 @@ module.exports = {
     ]
    },
    stylus: {
-    use: [rupture()],
+    use: [
+      rupture(),
+      nib()
+    ],
+    compress: true,
    },
    plugins: [
      new ExtractTextPlugin('[name].css'),
