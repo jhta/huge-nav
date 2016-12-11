@@ -1,0 +1,19 @@
+chevronMixin(direction = 'top', sideSize = 15px)
+  border-style solid
+  border-width 5px 5px 0 0
+  display inline-block
+  height sideSize
+  position relative
+  vertical-align middle
+  width sideSize
+
+  if direction == "top"
+    transform rotate(-45deg)
+  else
+    transform rotate(135deg)
+
+
+.Chevron
+  &:before
+    content ''
+    chevronMixin('down', 15px)

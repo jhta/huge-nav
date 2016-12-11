@@ -1,0 +1,164 @@
+
+$nav_height = 60px
+$nav_horizontal_padding = 24px
+$item_height = 48px
+
+.Nav
+  z-index 3
+  width 100%
+  background $magenta
+  color white
+  padding 20px $nav_horizontal_padding
+  min-height $nav_height
+  position fixed
+  top 0
+
+
+  &-brand
+    opacity 0
+    position absolute
+    left -200px
+    margin-left $nav_horizontal_padding
+
+  &-list
+    display block
+    z-index 4
+    position fixed
+    top $nav_height
+    border 1px solid red
+    left -100%
+    width "calc(100% - %s)" % $nav_height
+    height "calc(100% - %s)" % $nav_height
+    color black
+    transition .3s all linear
+    padding 12px 0
+    background white
+    overflow-y auto
+    max-width 350px
+
+
+  &-subList
+    height 0
+    opacity 0
+    transition height .4s linear, opacity .1s linear
+
+  &-item
+    font-size 21px
+    width 100%
+    min-height $item_height
+    line-height $item_height
+    position relative
+    font-weight bold
+    font-family 'HUGEAvantGardeBold'
+
+    a
+      font-weight bold
+      width 100%
+      padding 0 $nav_horizontal_padding
+      display block
+
+    &.is-primary
+      &:hover
+        background rgba(0, 0, 0, 0.1)
+
+    &.is-secundary
+
+      .Chevron
+        color $magenta
+        transition all .2s linear
+
+      >
+        input[type="checkbox"]
+          display none
+          &:checked
+            ~
+              .Nav
+                &-subList
+                  opacity 100
+                  height auto
+
+            ~ label
+                background black
+                a
+                  >
+                    .Chevron
+                      transition all .2s linear
+                      transform rotate(180deg)
+                      //animation sheen .4s forwards
+      /*&:hover
+        >
+          .Nav
+            &-subList
+              opacity 100
+              height auto
+          .Chevron
+            color $magenta
+
+            */
+      a
+        display flex
+        justify-content space-between
+        align-items center
+
+  &-subItem
+    font-family 'Galaxie'
+    a
+      font-size 16px
+      font-weight 500
+
+      &:hover
+        color $magenta
+        background rgba(0, 0, 0, 0.1)
+
+  &-switch
+    left 0
+    top 0
+    padding 0
+    margin 0
+    width 68px
+    height $nav_height
+    position absolute
+    cursor pointer
+    color white
+    transition color .1s, left .5s
+
+    &:hover
+      color $magenta
+      transition color .1s, left .5s
+
+
+    &:before
+      position absolute
+      top -4px
+      content url(images/toggle-open.svg)
+
+  input[type="checkbox"]
+    display none
+
+    &:checked
+      ~ .Overlay
+        display block
+
+      ~
+        .Nav
+          &-switch
+            left 100%
+            margin-left -64px
+            transition color .1s, left .5s
+            color white
+
+
+            &:before
+              content url(images/toggle-close.svg)
+              transition all .5s
+              color white
+
+          &-list
+            left 0
+            transition .3s all linear
+
+          &-brand
+            opacity 100
+            left 0
+            transition opacity .5s ease-out
+            transition-delay .4s

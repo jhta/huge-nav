@@ -13,7 +13,7 @@ module.exports = {
     path: './server/public/',
     filename: '[name].js',
   },
-  devtool: "source-map"
+  devtool: "source-map",
   module: {
     loaders: [
       {
@@ -23,6 +23,9 @@ module.exports = {
       // Font Definitions
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000'
+      },
+      {
+        test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'
       }
     ]
    },
@@ -35,6 +38,6 @@ module.exports = {
    },
    plugins: [
      new ExtractTextPlugin('[name].css'),
-     new webpack.optimize.CommonsChunkPlugin('commons', 'common.js')
+     //new webpack.optimize.CommonsChunkPlugin('commons', 'common.js')
    ],
 };

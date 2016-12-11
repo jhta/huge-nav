@@ -1,78 +1,10 @@
 @import "styles/fonts.styl"
-@import "styles/guideline.styl"
 @import "styles/colors.styl"
+@import "styles/guideline.styl"
+@import "styles/chevron.styl"
+@import "styles/header.styl"
+@import "styles/overlay.styl"
+@import "styles/nav.styl"
 
-$nav_height = 60px
-
-.Nav
-  width 100%
-  background $magenta
-  color white
-  padding 20px 24px
-  min-height $nav_height
-
-
-  &-brand
-    display none
-
-  &-list
-    display block
-    position absolute
-    top $nav_height
-    border 1px solid red
-    left -100%
-    width "calc(100% - %s)" % $nav_height
-    height "calc(100% - %s)" % $nav_height
-    color black
-    transition .3s all linear
-
-  &-switch
-    left 0
-    top 0
-    padding 0
-    margin 0
-    width 68px
-    height $nav_height
-    position absolute
-    cursor pointer
-    color white
-    transition color .1s, left .5s
-
-    &:hover
-      color $magenta
-      transition color .1s, left .5s
-
-
-    &:before
-      position absolute
-      top 50%
-      left 47%
-      width 24px
-      font-size 48px
-      content "\2261"
-      font-weight bold
-      transform translate(-50%, -50%)
-      color white
-
-
-  input[type="checkbox"]
-    display none
-
-    &:checked
-      ~
-        .Nav
-          &-switch
-            left 100%
-            margin-left -64px
-            transition color .1s, left .5s
-            color white
-
-
-            &:before
-              content 'x'
-              transition all .5s
-              color white
-
-          &-list
-            left 0
-            transition .3s all linear
+.content
+  margin-top 60px
