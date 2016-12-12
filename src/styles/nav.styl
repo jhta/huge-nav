@@ -25,7 +25,6 @@ $item_height = 48px
     z-index 4
     position fixed
     top $nav_height
-    border 1px solid red
     left -100%
     width "calc(100% - %s)" % $nav_height
     height "calc(100% - %s)" % $nav_height
@@ -59,7 +58,7 @@ $item_height = 48px
 
     &.is-primary
       &:hover
-        background rgba(0, 0, 0, 0.1)
+        background $light_gray
 
     &.is-secundary
 
@@ -84,17 +83,6 @@ $item_height = 48px
                     .Chevron
                       transition all .2s linear
                       transform rotate(180deg)
-                      //animation sheen .4s forwards
-      /*&:hover
-        >
-          .Nav
-            &-subList
-              opacity 100
-              height auto
-          .Chevron
-            color $magenta
-
-            */
       a
         display flex
         justify-content space-between
@@ -108,7 +96,7 @@ $item_height = 48px
 
       &:hover
         color $magenta
-        background rgba(0, 0, 0, 0.1)
+        background $light_gray
 
   &-switch
     left 0
@@ -162,3 +150,74 @@ $item_height = 48px
             left 0
             transition opacity .5s ease-out
             transition-delay .4s
+
++above(768px)
+  .Chevron
+    display none
+  .Nav
+    padding 0
+    height 72px
+    display flex
+    position absolute
+
+    &-switch
+      display none
+
+    &-brand
+      left 0
+      position relative
+      opacity 100
+      margin-left 0
+      max-height 24px
+      padding 24px
+
+      img
+        width 60px
+        height 24px
+
+    &-list
+      position initial
+      display flex
+      top 0
+      left 0
+      width auto
+      height auto
+      transition .3s all linear
+      background transparent
+      max-width inherit
+      padding 0 24px
+      overflow hidden
+
+    &-item
+      min-height 72px
+      line-height 72px
+      width auto
+      position initial
+
+      a
+        color white
+
+        &:hover
+          background white
+          color $magenta
+
+      &.is-secondary
+        >
+          input[type="checkbox"]
+            &:checked
+              ~
+                .Nav
+                  &-subList
+                    background red
+                    display initial
+
+    &-subList
+      background white
+      position absolute
+
+    &-subItem
+      a
+        color black
+
+        &:hover
+          background $light_gray

@@ -1,4 +1,36 @@
 .Header
-  height 264px
-  width 100%
-  background url("images/background-image.jpg")
+
+  &-responsive
+    height 264px
+    width 100%
+    background url("images/background-image.jpg")
+
+  h1
+    margin 50px 24px
+    font-family 'HUGEAvantGardeBold'
+    font-size 44px
+    line-height 48px
+
++above(768px)
+  .Header
+    display block
+    height 100%
+    width 100%
+    background url("images/background-image.jpg")
+    position relative
+    background-size cover
+    max-height 640px
+
+    &-content
+      display flex
+      align-items center
+
+    &-responsive
+      display none
+
+    h1
+      margin 0
+      color white
+      font-size 120px
+      line-height 132px
+      text-align center
