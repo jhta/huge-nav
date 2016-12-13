@@ -1,0 +1,46 @@
+<nav class="Nav">
+  <input type="checkbox" id="switch"/>
+  <label class="Nav-switch" for="switch"></label>
+  <label class="Overlay" for="switch"></label>
+  <figure class="Nav-brand">
+    <img src="/images/HUGE-white.png" width="50" height="20" alt="Huge_inc"/>
+  </figure>
+  <ul class="Nav-list" id="list">
+    {{#each items}}
+        {{#if items}}
+          <li class="Nav-item is-secondary">
+            <input id="item-{{label}}" type="checkbox" name="navigation" aria-hidden="true" hidden="">
+            <label for="item-{{label}}">
+              <a>{{label}} <span class="Chevron"></span></a>
+            </label>
+            <ul class="Nav-subList">
+              {{#each items}}
+                <li class="Nav-subItem">
+                  <a href="{{url}}">{{label}}</a>
+                </li>
+              {{/each}}
+            </ul>
+          </li>
+        {{else}}
+          <li class="Nav-item is-primary">
+            <a href="{{url}}">{{{label}}}</a>
+          </li>
+        {{/if}}
+      </li>
+    {{/each}}
+</ul>
+</nav>
+<main class="content">
+  <header class="Header">
+    <div class="Header-responsive"></div>
+    <div class="Header-content u-wrapper">
+      <h1>Get paid for giving a shit. </h1>
+    </div>
+  </header>
+  <section class="Body u-wrapper">
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </section>
+</main>
