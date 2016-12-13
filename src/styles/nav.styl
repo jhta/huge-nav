@@ -155,12 +155,14 @@ $item_height = 48px
             transition opacity .5s ease-out
             transition-delay .4s
 
+$nav_height_desktop = 72px
+
 +above($mobile_size)
   .Chevron
     display none
   .Nav
     padding 0
-    height 72px
+    height $nav_height_desktop
     display flex
     position absolute
 
@@ -172,8 +174,9 @@ $item_height = 48px
       position relative
       opacity 100
       margin-left 0
-      max-height 24px
+      max-height $nav_height_desktop
       padding 24px
+      cursor pointer
 
       img
         width 60px
@@ -193,13 +196,14 @@ $item_height = 48px
       overflow hidden
 
     &-item
-      min-height 72px
-      line-height 72px
+      min-height $nav_height_desktop
+      line-height $nav_height_desktop
       width auto
       position initial
 
       a
         color white
+        transition all .1s linear
 
         &:hover
           background white
