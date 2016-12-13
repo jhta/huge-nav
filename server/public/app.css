@@ -37,6 +37,12 @@ a {
 .content {
   height: 100%;
   width: 100%;
+  margin-top: 60px;
+}
+@media only screen and (min-width: 768px) {
+  .content {
+    margin-top: 72px;
+  }
 }
 .Chevron:before {
   content: '';
@@ -58,6 +64,11 @@ a {
   height: 100%;
   top: 60px;
   left: 0;
+}
+@media only screen and (min-width: 768px) {
+  .Overlay {
+    display: none !important;
+  }
 }
 .u-wrapper {
   max-width: 968px;
@@ -119,30 +130,34 @@ a {
 .Nav-item.is-primary:hover {
   background: #eee;
 }
-.Nav-item.is-secundary .Chevron {
+.Nav-item.is-secondary .Chevron {
   color: #ec008c;
   transition: all 0.2s linear;
 }
-.Nav-item.is-secundary > input[type="checkbox"] {
+.Nav-item.is-secondary > input[type="checkbox"] {
   display: none;
 }
-.Nav-item.is-secundary > input[type="checkbox"]:checked ~ .Nav-subList {
+.Nav-item.is-secondary > input[type="checkbox"]:checked ~ .Nav-subList {
   opacity: 100;
   height: auto;
 }
-.Nav-item.is-secundary > input[type="checkbox"]:checked ~ label {
+.Nav-item.is-secondary > input[type="checkbox"]:checked ~ .Nav-subList .Nav-subItem {
+  height: auto;
+}
+.Nav-item.is-secondary > input[type="checkbox"]:checked ~ label {
   background: #000;
 }
-.Nav-item.is-secundary > input[type="checkbox"]:checked ~ label a > .Chevron {
+.Nav-item.is-secondary > input[type="checkbox"]:checked ~ label a > .Chevron {
   transition: all 0.2s linear;
   transform: rotate(180deg);
 }
-.Nav-item.is-secundary a {
+.Nav-item.is-secondary a {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .Nav-subItem {
+  height: 0;
   font-family: 'Galaxie';
 }
 .Nav-subItem a {
@@ -252,16 +267,13 @@ a {
     background: #fff;
     color: #ec008c;
   }
-  .Nav-item.is-secondary > input[type="checkbox"]:checked ~ .Nav-subList {
-    background: #f00;
-    display: initial;
-  }
   .Nav-subList {
     background: #fff;
     position: absolute;
   }
   .Nav-subItem a {
     color: #000;
+    line-height: 48px;
   }
   .Nav-subItem a:hover {
     background: #eee;
@@ -319,9 +331,6 @@ a {
     line-height: 36px;
     text-align: justify;
   }
-}
-.content {
-  margin-top: 60px;
 }
 
 /*# sourceMappingURL=app.css.map*/

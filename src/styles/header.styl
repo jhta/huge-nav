@@ -1,25 +1,30 @@
-.Header
+$header_height = 264px
+$header_height_desktop = 640px
+$title_size = 44px
+$title_size_desktop = 120px
+$background_url = "images/background-image.jpg"
 
+.Header
   &-responsive
-    height 264px
+    height $header_height
     width 100%
-    background url("images/background-image.jpg")
+    background url($background_url)
 
   h1
     margin 50px 24px
     font-family 'HUGEAvantGardeBold'
-    font-size 44px
+    font-size $title_size
     line-height 48px
 
-+above(768px)
++above($mobile_size)
   .Header
     display block
     height 100%
     width 100%
-    background url("images/background-image.jpg")
+    background url($background_url)
     position relative
     background-size cover
-    max-height 640px
+    max-height $header_height_desktop
 
     &-content
       display flex
@@ -31,6 +36,6 @@
     h1
       margin 0
       color white
-      font-size 120px
+      font-size $title_size_desktop
       line-height 132px
       text-align center

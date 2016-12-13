@@ -60,7 +60,7 @@ $item_height = 48px
       &:hover
         background $light_gray
 
-    &.is-secundary
+    &.is-secondary
 
       .Chevron
         color $magenta
@@ -76,6 +76,9 @@ $item_height = 48px
                   opacity 100
                   height auto
 
+                  .Nav-subItem
+                    height auto
+
             ~ label
                 background black
                 a
@@ -89,6 +92,7 @@ $item_height = 48px
         align-items center
 
   &-subItem
+    height 0
     font-family 'Galaxie'
     a
       font-size 16px
@@ -151,7 +155,7 @@ $item_height = 48px
             transition opacity .5s ease-out
             transition-delay .4s
 
-+above(768px)
++above($mobile_size)
   .Chevron
     display none
   .Nav
@@ -201,15 +205,6 @@ $item_height = 48px
           background white
           color $magenta
 
-      &.is-secondary
-        >
-          input[type="checkbox"]
-            &:checked
-              ~
-                .Nav
-                  &-subList
-                    background red
-                    display initial
 
     &-subList
       background white
@@ -218,6 +213,7 @@ $item_height = 48px
     &-subItem
       a
         color black
+        line-height 48px
 
         &:hover
           background $light_gray
