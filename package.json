@@ -14,6 +14,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "docs": "jsdoc2md src/js/navigation.js -c docs/conf.js  > docs/navigation.md",
     "start": "node ./server/bin/www"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "express-handlebars": "^3.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "jsdoc": "^3.4.3",
     "morgan": "~1.0.0",
     "nib": "^1.1.2",
     "rupture": "^0.6.2",
@@ -36,5 +38,8 @@
     "stylus-loader": "^2.4.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "jsdoc-babel": "^0.3.0"
   }
 }
