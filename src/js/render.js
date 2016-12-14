@@ -1,3 +1,4 @@
+import 'whatwg-fetch'
 
 /**
  * Render item list in DOM element #list
