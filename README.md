@@ -1,5 +1,8 @@
 # Huge Navigation Exercise
 
+## Changes:
+https://github.com/jhta/huge-nav/blob/master/docs/general.md
+
 ## Overview
 
 This exercise will have the candidate build a responsive site navigation driven by an AJAX request.
