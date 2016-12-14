@@ -10,6 +10,7 @@ module.exports = {
   entry: {
     app: './src/index.js',
     render: './src/js/render.js',
+    navigation: './src/js/navigation.js',
   },
   output: {
     path: './server/public/',
