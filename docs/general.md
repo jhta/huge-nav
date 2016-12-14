@@ -1,7 +1,10 @@
 # Documentation
 
 ## Instalation
- `npm i && npm run build`
+ `npm i`
+
+## Build
+  `webpack`
 
 ## Start server
   `npm start`

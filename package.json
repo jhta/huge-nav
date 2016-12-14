@@ -13,10 +13,10 @@
   },
   "private": true,
   "scripts": {
+    "postinstall": "webpack" ,
     "test": "mocha tests/",
     "docs": "jsdoc2md src/js/navigation.js -c docs/conf.js  > docs/navigation.md",
-    "start": "node ./server/bin/www",
-    "build": "webpack"
+    "start": "node ./server/bin/www"
   },
   "dependencies": {
     "babel": "^6.5.2",
