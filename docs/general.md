@@ -10,10 +10,14 @@
   `npm run docs`
 
 ## Features:
- * ES6 transpiler with babel
- * AMD modules and task running with webpack
+ * ES6 transpiler with Babel
+ * AMD modules and task running with Webpack
  * Documentation with JSDocs and JSdoc2md
- * Stylus as CSS-precompiler
+ * CSS-precompiler and autoprefixer with Stylus
 
 ## Wins:
-  * For better performance run the website with render server: (localhost:3000/server-render/)
+  * For better performance run the website with render server: [server](localhost:3000/server-render/)
+  * Minimize JS and CSS files with .map everyone.
+  * Basic frontend developer enviroment.
+  * navigation without js for mobile size.
+  * Mobile first
